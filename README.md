@@ -15,6 +15,12 @@
 ```sh
 pip install -r requirements.txt
 ```
-4. Run:
+4. Open `main.py` and replace `os.environ.get("OPEN_API_KEY")` with your own key:
+```python
+api_key="ENTER_YOUR_KEY_HERE"
+```
+
+5. Run:
 ```sh
 python main.py
+```

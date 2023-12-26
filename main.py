@@ -3,6 +3,7 @@ import typer
 import speech_recognition as sr
 import pyaudio
 import pyttsx3
+import time
 from openai import OpenAI
 from dotenv import load_dotenv
 
@@ -20,7 +21,7 @@ client = OpenAI(
 
 """Interactive english learning AI"""
 typer.echo(
-    "\nYour personal AI English teacher is ready, say something! \nSay 'exit' to leave."
+    "\nYour personal AI English teacher is ready.\nSay 'exit' to leave."
 )
 
 messages = []
@@ -39,8 +40,10 @@ while True:
         r = sr.Recognizer()
         continue
     except sr.RequestError as e:
+        r = sr.Recognizer()
         continue
     except Exception as e:
+        r = sr.Recognizer()
         continue
 
 
@@ -59,3 +62,5 @@ while True:
     engine.say(ai_reply)
     engine.runAndWait()
     messages.append({"role": "assistant", "content": ai_reply})
+
+    r = sr.Recognizer()

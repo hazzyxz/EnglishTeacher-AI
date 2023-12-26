@@ -1,4 +1,4 @@
-# EnglishTeacher_AI
+# EnglishTeacher-AI
 
 
 ## Introduction
